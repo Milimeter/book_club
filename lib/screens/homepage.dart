@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   AppController _appController = Get.find();
   UserProvider userProvider;
 
- // bool _selectedOptions = false;
+  // bool _selectedOptions = false;
 
   Widget _buildHeader() {
     List<UserModel> userModel = userProvider.userModelList;
@@ -61,25 +61,29 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
-          onTap: _appController.changeToMorning(),
+          onTap: () {
+            _appController.changeToMorning();
+          },
           child: Container(
             alignment: Alignment.center,
             height: 65,
             width: MediaQuery.of(context).size.height * 0.2,
             decoration: BoxDecoration(
-              color: _appController.morning.value ? buttonColor : white,
+              color: _appController.morning.value == true ? buttonColor : white,
               borderRadius: BorderRadius.circular(30),
             ),
             child: CustomText(
               text: firstText,
               size: 14,
-              color: _appController.morning.value ? white : buttonColor,
+              color: _appController.morning.value == true ? white : buttonColor,
               weight: FontWeight.w500,
             ),
           ),
         ),
         GestureDetector(
-          onTap: _appController.changeToEvening(),
+          onTap: () {
+            _appController.changeToEvening();
+          },
           child: Container(
             alignment: Alignment.center,
             height: 65,
@@ -105,7 +109,9 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
-          onTap: _appController.changeToWeekdays(),
+          onTap: () {
+            _appController.changeToWeekdays();
+          },
           child: Container(
             alignment: Alignment.center,
             height: 65,
@@ -123,7 +129,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         GestureDetector(
-          onTap: _appController.changeToWeekends(),
+          onTap: () {
+            _appController.changeToWeekends();
+          },
           child: Container(
             alignment: Alignment.center,
             height: 65,
@@ -149,7 +157,9 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
-          onTap: _appController.changeToYes(),
+          onTap: () {
+            _appController.changeToYes();
+          },
           child: Container(
             alignment: Alignment.center,
             height: 65,
@@ -167,7 +177,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         GestureDetector(
-          onTap: _appController.changeToNo(),
+          onTap: () {
+            _appController.changeToNo();
+          },
           child: Container(
             alignment: Alignment.center,
             height: 65,
@@ -224,6 +236,63 @@ class _HomePageState extends State<HomePage> {
                             height: 20,
                           ),
                           _read(firstText: "Morning", secondText: "Evening"),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //   children: [
+                          //     GestureDetector(
+                          //       onTap: () {
+                          //         _appController.changeToMorning();
+                          //       },
+                          //       child: Container(
+                          //         alignment: Alignment.center,
+                          //         height: 65,
+                          //         width:
+                          //             MediaQuery.of(context).size.height * 0.2,
+                          //         decoration: BoxDecoration(
+                          //           color: _appController.morning.value
+                          //               ? buttonColor
+                          //               : white,
+                          //           borderRadius: BorderRadius.circular(30),
+                          //         ),
+                          //         child: CustomText(
+                          //           text: "Morning",
+                          //           size: 14,
+                          //           color: _appController.morning.value
+                          //               ? white
+                          //               : buttonColor,
+                          //           weight: FontWeight.w500,
+                          //         ),
+                          //       ),
+                          //     ),
+                          //     GestureDetector(
+                          //       onTap: () {
+                          //         _appController.changeToEvening();
+                          //       },
+                          //       child: Container(
+                          //         alignment: Alignment.center,
+                          //         height: 65,
+                          //         width:
+                          //             MediaQuery.of(context).size.height * 0.2,
+                          //         decoration: BoxDecoration(
+                          //           color: _appController.evening.value
+                          //               ? buttonColor
+                          //               : white,
+                          //           borderRadius: BorderRadius.circular(30),
+                          //         ),
+                          //         child: CustomText(
+                          //           text: "Evening",
+                          //           size: 14,
+                          //           color: _appController.evening.value
+                          //               ? white
+                          //               : buttonColor,
+                          //           weight: FontWeight.w500,
+                          //         ),
+                          //       ),
+                          //     )
+                          //   ],
+                          // ),
+                        
+                        
                         ],
                       ),
                     ),
@@ -245,7 +314,65 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(
                             height: 20,
                           ),
-                          _time(firstText: "Weekdays", secondText: "Weekends")
+                            _time(firstText: "Weekdays", secondText: "Weekends"),
+
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //   children: [
+                          //     GestureDetector(
+                          //       onTap: () {
+                          //         _appController.changeToWeekdays();
+                          //       },
+                          //       child: Container(
+                          //         alignment: Alignment.center,
+                          //         height: 65,
+                          //         width:
+                          //             MediaQuery.of(context).size.height * 0.2,
+                          //         decoration: BoxDecoration(
+                          //           color: _appController.weekdays.value
+                          //               ? buttonColor
+                          //               : white,
+                          //           borderRadius: BorderRadius.circular(30),
+                          //         ),
+                          //         child: CustomText(
+                          //           text: "Weekdays",
+                          //           size: 14,
+                          //           color: _appController.weekdays.value
+                          //               ? white
+                          //               : buttonColor,
+                          //           weight: FontWeight.w500,
+                          //         ),
+                          //       ),
+                          //     ),
+                          //     GestureDetector(
+                          //       onTap: () {
+                          //         _appController.changeToWeekends();
+                          //       },
+                          //       child: Container(
+                          //         alignment: Alignment.center,
+                          //         height: 65,
+                          //         width:
+                          //             MediaQuery.of(context).size.height * 0.2,
+                          //         decoration: BoxDecoration(
+                          //           color: _appController.weekends.value
+                          //               ? buttonColor
+                          //               : white,
+                          //           borderRadius: BorderRadius.circular(30),
+                          //         ),
+                          //         child: CustomText(
+                          //           text: "Weekends",
+                          //           size: 14,
+                          //           color: _appController.weekends.value
+                          //               ? white
+                          //               : buttonColor,
+                          //           weight: FontWeight.w500,
+                          //         ),
+                          //       ),
+                          //     )
+                          //   ],
+                          // ),
+                        
+                        
                         ],
                       ),
                     ),
@@ -270,7 +397,65 @@ class _HomePageState extends State<HomePage> {
                           ),
                           _timetable(
                               firstText: "Yes",
-                              secondText: "No, i will do it myself")
+                              secondText: "No, i will do it myself"),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //   children: [
+                          //     GestureDetector(
+                          //       onTap: () {
+                          //         print("here");
+                          //         _appController.changeToYes();
+                          //       },
+                          //       child: Container(
+                          //         alignment: Alignment.center,
+                          //         height: 65,
+                          //         width:
+                          //             MediaQuery.of(context).size.height * 0.2,
+                          //         decoration: BoxDecoration(
+                          //           color: _appController.yes.value
+                          //               ? buttonColor
+                          //               : white,
+                          //           borderRadius: BorderRadius.circular(30),
+                          //         ),
+                          //         child: CustomText(
+                          //           text: "Yes",
+                          //           size: 14,
+                          //           color: _appController.yes.value
+                          //               ? white
+                          //               : buttonColor,
+                          //           weight: FontWeight.w500,
+                          //         ),
+                          //       ),
+                          //     ),
+                          //     GestureDetector(
+                          //       onTap: () {
+                          //         _appController.changeToNo();
+                          //       },
+                          //       child: Container(
+                          //         alignment: Alignment.center,
+                          //         height: 65,
+                          //         width:
+                          //             MediaQuery.of(context).size.height * 0.2,
+                          //         decoration: BoxDecoration(
+                          //           color: _appController.no.value
+                          //               ? buttonColor
+                          //               : white,
+                          //           borderRadius: BorderRadius.circular(30),
+                          //         ),
+                          //         child: CustomText(
+                          //           text: "No, i will do it myself",
+                          //           size: 14,
+                          //           color: _appController.no.value
+                          //               ? white
+                          //               : buttonColor,
+                          //           weight: FontWeight.w500,
+                          //         ),
+                          //       ),
+                          //     )
+                          //   ],
+                          // ),
+                        
+                        
                         ],
                       ),
                     ),
